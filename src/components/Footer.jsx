@@ -1,9 +1,9 @@
-// src/components/Footer.jsx
-import React from 'react';
-import { FaGithub, FaLinkedin } from 'react-icons/fa'; // Import the icons
-import './Footer.css'; // We will create this CSS file next
 
-// This component takes your personal URLs as props
+import React from 'react';
+import { FaGithub, FaLinkedin } from 'react-icons/fa'; 
+import './Footer.css'; 
+
+
 function Footer({ githubUrl, linkedinUrl }) {
   return (
     <footer className="site-footer">

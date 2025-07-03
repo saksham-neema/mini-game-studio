@@ -1,7 +1,7 @@
-// src/games/DodgeThePixel.jsx
+
 import React, { useState, useEffect, useRef } from 'react';
 
-// --- Game Constants ---
+
 const PLAYER_SIZE = 30;
 const ENEMY_SIZE = 25;
 const BASE_ENEMY_SPEED = 4;
@@ -11,20 +11,20 @@ const MUSIC_URL = '/dodge-the-pixel.mp3';
 const ENEMY_COLORS = ['#ff4136', '#ff851b', '#b10dc9', '#f012be'];
 
 function DodgeThePixel({ onGameOver }) {
-  // --- State Hooks ---
+  
   const [playerPosition, setPlayerPosition] = useState(window.innerWidth / 2);
   const [enemies, setEnemies] = useState([]);
   const [score, setScore] = useState(0);
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
   
-  // --- Refs & Audio State ---
+  
   const gameAreaRef = useRef(null);
   const audioRef = useRef(null);
   const [isMusicPlaying, setIsMusicPlaying] = useState(false);
 
-  // --- CORRECTED: Audio setup useEffect ---
-  // This hook is now at the top level of the component where it belongs.
+  
+  
   useEffect(() => {
     audioRef.current = new Audio(MUSIC_URL);
     audioRef.current.loop = true;
@@ -36,16 +36,16 @@ function DodgeThePixel({ onGameOver }) {
         audioRef.current.src = '';
       }
     };
-  }, []); // Runs once on mount
+  }, []); 
 
-  // --- Game Loop useEffect ---
+  
   useEffect(() => {
     const gameLoop = setInterval(() => {
       const speedMultiplier = 1 + score / 500;
       const currentSpeed = BASE_ENEMY_SPEED * speedMultiplier;
       const currentSpawnChance = Math.min(0.5, BASE_SPAWN_CHANCE + score / 2000);
 
-      // --- Enemy Logic ---
+      
       setEnemies(prevEnemies => {
         let newEnemies = prevEnemies
           .map(enemy => ({ ...enemy, y: enemy.y + currentSpeed }))
@@ -61,7 +61,7 @@ function DodgeThePixel({ onGameOver }) {
         return newEnemies;
       });
 
-      // --- Collision Detection (Now works correctly) ---
+      
       for (let enemy of enemies) {
         const playerRect = { x: playerPosition, y: screenHeight - PLAYER_SIZE, width: PLAYER_SIZE, height: PLAYER_SIZE };
         const enemyRect = { x: enemy.x, y: enemy.y, width: ENEMY_SIZE, height: ENEMY_SIZE };
@@ -76,14 +76,14 @@ function DodgeThePixel({ onGameOver }) {
         }
       }
 
-      // Increment score
+      
       setScore(s => s + 1);
     }, 20);
 
     return () => clearInterval(gameLoop);
   }, [enemies, onGameOver, playerPosition, score, screenHeight, screenWidth]);
 
-  // --- Handle Mouse Movement ---
+  
   const handleMouseMove = (e) => {
     if (!isMusicPlaying && audioRef.current) {
       audioRef.current.play().catch(err => console.error("Audio playback failed:", err));
@@ -94,7 +94,7 @@ function DodgeThePixel({ onGameOver }) {
     setPlayerPosition(Math.max(0, Math.min(newX, screenWidth - PLAYER_SIZE)));
   };
 
-  // --- Effect to handle window resizing ---
+  
   useEffect(() => {
     const handleResize = () => {
       if (gameAreaRef.current) {

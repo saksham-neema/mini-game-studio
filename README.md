@@ -7,7 +7,7 @@ A retro arcade cabinet built with React, featuring three classic micro-games. Th
 
 ### [**Live Demo on Vercel**](https://tiny-arcade.vercel.app/)
 
-<!-- 💡 Don't forget to replace this screenshot with a cool GIF or image of your finished project! -->
+
 ![Minigame Studio Screenshot](Screenshot%202025-07-03%20195308.png)
 ![Minigame Studio Screenshot](Screenshot%202025-07-03%20195543.png)
 ![Minigame Studio Screenshot](Screenshot%202025-07-03%20195652.png)

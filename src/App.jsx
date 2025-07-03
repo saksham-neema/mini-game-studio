@@ -1,28 +1,28 @@
-// src/App.jsx
+
 import React, { useState } from 'react';
 
-// Import all our components
+
 import ArcadeCabinet from './components/ArcadeCabinet';
 import WelcomeScreen from './components/WelcomeScreen';
 import GameMenu from './components/GameMenu';
 import GameOverScreen from './components/GameOverScreen';
 import Footer from './components/Footer';
 
-// Import the games
+
 import FlappyDot from './games/FlappyDot';
 import DodgeThePixel from './games/DodgeThePixel';
 import ColorCatch from './games/ColorCatch';
 
-// Import the new CSS file
+
 import './components/Footer.css';
 
 function App() {
-  // --- STATE MANAGEMENT (Stays the same) ---
+ 
   const [gameState, setGameState] = useState('welcome');
   const [score, setScore] = useState(0);
   const [activeGame, setActiveGame] = useState(null);
 
-  // --- DATA & HELPERS (Stays the same) ---
+  
   const games = [
     { id: 'flappy-dot', name: 'Flappy Dot' },
     { id: 'dodge-the-pixel', name: 'Dodge The Pixel' },
@@ -43,7 +43,7 @@ function App() {
     }
   };
   
-  // --- EVENT HANDLERS (Stays the same) ---
+ 
   const startGame = (gameId) => {
     setActiveGame(gameId);
     setGameState('playing');
@@ -61,7 +61,6 @@ function App() {
     setGameState('menu');
   };
 
-  // --- RENDER LOGIC (Now returns components) ---
   const renderGame = () => {
     switch (activeGame) {
       case 'flappy-dot': return <FlappyDot onGameOver={handleGameOver} />;
@@ -92,7 +91,7 @@ function App() {
     }
   };
 
-  // --- FINAL RENDER (Much cleaner!) ---
+  
    return (
         <> {/* A Fragment to hold both the cabinet and footer */}
           <ArcadeCabinet
@@ -105,8 +104,8 @@ function App() {
 
           {/* 
             This is the conditional rendering logic.
-            The footer will only be rendered if it's NOT the case that
-            the game is 'playing' AND the active game is 'dodge-the-pixel'.
+            The footer will only be rendered if it's not the case that
+            the game is 'playing AND the active game is 'dodge-the-pixel'.
           */}
           {!(gameState === 'playing' && activeGame === 'dodge-the-pixel') && (
             <Footer

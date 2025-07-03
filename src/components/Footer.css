@@ -1,12 +1,12 @@
-/* src/components/Footer.css (Visually Upgraded) */
+
 
 .site-footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  background-color: #0d0d0d; /* Darker background for more contrast */
-  padding: 15px 40px; /* A bit more padding */
+  background-color: #0d0d0d;
+  padding: 15px 40px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,39 +16,39 @@
   box-shadow: 0 -4px 15px rgba(0, 255, 0, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.1);
 
-  /* --- The Neon Border --- */
-  border-top: 3px solid #0f0; /* Bright neon green border */
-  /* The glow effect for the border */
+ 
+  border-top: 3px solid #0f0;
+ 
   box-shadow: 0 -4px 15px rgba(0, 255, 0, 0.4), 
               inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
 
 .footer-links {
   display: flex;
-  gap: 30px; /* More space between links */
+  gap: 30px;
 }
 
 .footer-link {
-  color: #c0c0c0; /* Softer initial color */
+  color: #c0c0c0;
   text-decoration: none;
   display: flex;
   align-items: center;
   gap: 10px;
   font-size: 14px;
-  /* --- The Animation --- */
-  transition: all 0.2s ease-out; /* Smooth transition for hover effects */
+ 
+  transition: all 0.2s ease-out;
 }
 
-/* --- The Interactive Hover Effect --- */
+
 .footer-link:hover {
-  color: #ffcc00; /* Bright arcade yellow */
-  transform: translateY(-3px); /* Lifts the link up slightly */
-  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7); /* Adds a yellow glow to the text */
+  color: #ffcc00;
+  transform: translateY(-3px);
+  text-shadow: 0 0 8px rgba(255, 204, 0, 0.7);
 }
 
 .footer-link svg {
   font-size: 22px;
-  /* Make the icon glow along with the text on hover */
+ 
   transition: all 0.2s ease-out;
 }
 
@@ -56,14 +56,14 @@
   filter: drop-shadow(0 0 4px rgba(255, 204, 0, 0.7));
 }
 
-/* --- The Creator Credit --- */
+
 .creator-credit {
   position: absolute;
   right: 40px;
   font-size: 14px;
   font-weight: bold;
-  color: #00ff00; /* Match the neon green border */
-  /* The glow effect for your name */
+  color: #00ff00;
+ 
   text-shadow: 0 0 5px rgba(0, 255, 0, 0.5), 
                0 0 10px rgba(0, 255, 0, 0.5);
 }

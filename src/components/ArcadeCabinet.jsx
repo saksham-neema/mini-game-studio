@@ -1,4 +1,4 @@
-// src/components/ArcadeCabinet.jsx
+
 import React from 'react';
 
 function ArcadeCabinet({ gameState, watermark, children, controls }) {

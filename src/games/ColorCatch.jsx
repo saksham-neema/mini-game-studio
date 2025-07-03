@@ -1,14 +1,14 @@
-// src/games/ColorCatch.jsx
+
 
 import React, { useState, useEffect, useCallback, useRef } from 'react';
 
-// --- Game Constants ---
+
 const BASE_PALETTE = ['#e74c3c', '#3498db', '#2ecc71', '#f1c40f', '#9b59b6'];
 const EXPANDED_PALETTE = [...BASE_PALETTE, '#e67e22', '#1abc9c', '#34495e'];
 const MUSIC_URL = '/color-catch.mp3';
 const BPM = 90;
 
-// --- Helper Functions ---
+
 const getRandomColor = (palette, excludeColor = null) => {
   let availableColors = palette.filter(c => c !== excludeColor);
   return availableColors[Math.floor(Math.random() * availableColors.length)];
@@ -24,33 +24,33 @@ function ColorCatch({ onGameOver }) {
   const [palette, setPalette] = useState(BASE_PALETTE);
   const [msPerBeat, setMsPerBeat] = useState((60 / BPM) * 1000);
   
-  // --- NEW: Refs and State for Audio Control ---
-  const audioRef = useRef(null); // To hold the Audio object
-  const [isMusicPlaying, setIsMusicPlaying] = useState(false); // To track if music has started
+  
+  const audioRef = useRef(null); 
+  const [isMusicPlaying, setIsMusicPlaying] = useState(false); 
 
   const comboRef = useRef(null);
 
-  // --- MODIFIED: Music and Audio Management ---
+  
   useEffect(() => {
-    // 1. Create the Audio object and store it in the ref.
+    
     audioRef.current = new Audio(MUSIC_URL);
     audioRef.current.loop = true;
     audioRef.current.volume = 0.4;
     
-    // We DO NOT call .play() here anymore.
+    
 
-    // 2. Cleanup function to stop music when the game unmounts.
+    
     return () => {
       if (audioRef.current) {
         audioRef.current.pause();
         audioRef.current.src = '';
       }
     };
-  }, []); // Empty array ensures this runs only once on mount.
+  }, []); 
 
-  // The rest of the useEffects remain the same...
+  
   useEffect(() => {
-    if (!isMusicPlaying) return; // Don't run the color changer until music starts
+    if (!isMusicPlaying) return; 
 
     const colorChanger = setInterval(() => {
       setCurrentColor(getRandomColor(palette));
@@ -70,18 +70,18 @@ function ColorCatch({ onGameOver }) {
     }
   }, [score, msPerBeat, palette]);
 
-  // --- MODIFIED: Handle Player Input ---
+  
   const handleTap = useCallback(() => {
-    // --- NEW: Start music on the very first tap ---
+    
     if (!isMusicPlaying && audioRef.current) {
       audioRef.current.play().catch(e => console.error("Audio playback failed:", e));
       setIsMusicPlaying(true);
-      setMessage('Match The Colors!'); // Update instructions
+      setMessage('Match The Colors!'); 
     }
-    // --- End of new logic ---
+    
 
     if (currentColor === targetColor) {
-      // SUCCESS logic (remains the same)
+      
       const points = 10 * combo;
       const newScore = score + points;
       const newCombo = combo + 1;
@@ -99,7 +99,7 @@ function ColorCatch({ onGameOver }) {
       }
 
     } else {
-      // Don't end the game on the very first tap if it was just to start music
+      
       if (isMusicPlaying) {
         onGameOver(score);
       }

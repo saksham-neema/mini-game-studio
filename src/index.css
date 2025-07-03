@@ -1,6 +1,4 @@
-/* src/index.css */
 
-/* Basic reset and font */
 :root {
   font-family: 'Press Start 2P', monospace; /* A classic retro font */
   --cabinet-bg: #333;
@@ -27,38 +25,37 @@ body {
   height: 100vh;
 }
 
-/* This will be our full-screen mode for gameplay */
+/* full-screen mode  */
 .app-fullscreen {
   width: 100vw;
   height: 100vh;
 }
 
-/* Modify the arcade-cabinet for fullscreen mode */
 .app-fullscreen .arcade-cabinet {
   width: 100%;
   height: 100%;
   border-radius: 0;
   border: none;
   padding: 0;
-  flex-direction: column; /* Ensure it stacks correctly */
+  flex-direction: column; 
 }
 
-/* Make the screen take all available space in fullscreen */
+
 .app-fullscreen .arcade-screen {
-  flex-grow: 1; /* This is the magic! */
+  flex-grow: 1; 
   width: 100%;
-  height: auto; /* Let flex-grow handle the height */
+  height: auto; 
   border: none;
   border-radius: 0;
 }
 
-/* We can hide the header and controls in fullscreen for a cleaner look */
+
 .app-fullscreen .arcade-header,
 .app-fullscreen .arcade-controls {
   display: none;
 }
 
-/* The main arcade cabinet structure */
+
 .arcade-cabinet {
   width: 400px;
   height: 600px;
@@ -70,8 +67,8 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 20px;
-  box-sizing: border-box; /* Important for padding */
-  margin: 0; /* Center the cabinet */
+  box-sizing: border-box; 
+  margin: 0; 
   
 }
 
@@ -84,7 +81,7 @@ body {
   margin-bottom: 20px;
 }
 
-/* The "screen" where games will be played */
+
 .arcade-screen {
   width: 320px;
   height: 320px;
@@ -92,11 +89,11 @@ body {
   border: 15px solid var(--screen-border);
   border-radius: 10px;
   box-shadow: inset 0 0 10px #000;
-  position: relative; /* Crucial for positioning game elements */
-  overflow: hidden; /* Hide anything that goes outside the screen */
+  position: relative; 
+  overflow: hidden; 
 }
 
-/* The "control panel" area */
+
 .arcade-controls {
   width: 100%;
   flex-grow: 1;
@@ -107,7 +104,7 @@ body {
   padding-top: 20px;
 }
 
-/* General button style */
+
 .arcade-button {
   font-family: 'Press Start 2P', monospace;
   font-size: 16px;
@@ -128,11 +125,11 @@ body {
   box-shadow: 0 2px #550000;
 }
 
-/* For game selection menus */
+
 .game-menu {
   display: flex;
   flex-direction: column;
-  gap: 15px; /* Space between buttons */
+  gap: 15px; 
   align-items: center;
   justify-content: center;
   height: 100%;
@@ -148,7 +145,7 @@ body {
   box-shadow: 0 2px #004a99;
 }
 
-/* Game Over screen styles */
+
 .game-over-screen {
   display: flex;
   flex-direction: column;
@@ -169,12 +166,7 @@ body {
   margin: 0;
 }
 
-/* src/index.css */
 
-/* Flappy Dot Styles */
-/* src/index.css */
-
-/* --- Flappy Dot Styles (New) --- */
 @keyframes scroll-bg {
   from { background-position: 0 0; }
   to { background-position: -10000px 0; }
@@ -189,19 +181,18 @@ body {
   width: 100%;
   height: 100%;
   position: relative;
-  overflow: hidden; /* Crucial for keeping elements contained */
+  overflow: hidden; 
   
-  /* Layer 1: Sky Gradient */
+  
   background: linear-gradient(to bottom, #70c5ce 0%, #a6e2e9 100%);
   
-  /* Layer 2: Scrolling Clouds (SVG embedded in CSS) */
+  
   background-image: 
     url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="300" height="100"%3E%3Cpath d="M10 80 C 20 60, 40 60, 50 80 S 70 100, 80 80" fill="none" stroke="white" stroke-width="8"/%3E%3Cpath d="M110 70 C 120 50, 140 50, 150 70 S 170 90, 180 70" fill="none" stroke="white" stroke-width="6"/%3E%3Cpath d="M220 85 C 230 70, 250 70, 260 85 S 280 100, 290 85" fill="none" stroke="white" stroke-width="7"/%3E%3C/svg%3E'),
     linear-gradient(to bottom, #70c5ce 0%, #a6e2e9 100%);
   animation: scroll-clouds 80s linear infinite;
 
-  /* Layer 3: Scrolling City (also an embedded SVG) */
-  /* This will be a pseudo-element for better control */
+  
 }
 
 .flappy-dot-game::before {
@@ -209,7 +200,7 @@ body {
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 200%; /* Needs to be wide to scroll smoothly */
+  width: 200%; 
   height: 100px;
   background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="500" height="100"%3E%3Crect x="10" y="40" width="40" height="60" fill="%23d3d3d3"/%3E%3Crect x="60" y="20" width="30" height="80" fill="%23c0c0c0"/%3E%3Crect x="100" y="50" width="50" height="50" fill="%23d3d3d3"/%3E%3Crect x="160" y="30" width="20" height="70" fill="%23c0c0c0"/%3E%3Crect x="190" y="10" width="40" height="90" fill="%23d3d3d3"/%3E%3Crect x="240" y="45" width="30" height="55" fill="%23c0c0c0"/%3E%3Crect x="280" y="60" width="50" height="40" fill="%23d3d3d3"/%3E%3Crect x="340" y="25" width="40" height="75" fill="%23c0c0c0"/%3E%3Crect x="390" y="50" width="20" height="50" fill="%23d3d3d3"/%3E%3Crect x="420" y="15" width="40" height="85" fill="%23c0c0c0"/%3E%3C/svg%3E');
   background-size: 500px 100px;
@@ -228,7 +219,7 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
   z-index: 3;
-  /* Add a smooth transition for the rotation */
+ 
   transition: transform 0.2s linear;
 }
 
@@ -241,24 +232,24 @@ body {
   z-index: 2;
 }
 
-/* This ::before pseudo-element creates the pipe "cap" */
+
 .pipe::before {
   content: '';
   position: absolute;
-  left: -10px; /* Make it wider than the pipe body */
+  left: -10px; 
   width: 85px;
   height: 30px;
-  background-color: inherit; /* Use the same color */
+  background-color: inherit; 
   border: 4px solid #558028;
   border-radius: 5px;
 }
 
 .pipe-top::before {
-  bottom: -8px; /* Position at the bottom of the top pipe */
+  bottom: -8px; 
 }
 
 .pipe-bottom::before {
-  top: -8px; /* Position at the top of the bottom pipe */
+  top: -8px; 
 }
 
 .score-display {
@@ -268,9 +259,9 @@ body {
   transform: translateX(-50%);
   font-size: 48px;
   color: white;
-  text-shadow: 3px 3px #333; /* Darker shadow for better contrast */
+  text-shadow: 3px 3px #333; 
   z-index: 10;
-  -webkit-text-stroke: 2px #558028; /* Green outline like the pipes */
+  -webkit-text-stroke: 2px #558028; 
 }
 
 .dot {
@@ -281,9 +272,8 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
-/* src/index.css */
 
-/* Dodge the Pixel Styles */
+
 @keyframes digital-rain {
   from { background-position: 0 0; }
   to { background-position: 0 1000px; }
@@ -295,9 +285,9 @@ body {
   background-color: #000; /* Dark background */
   position: relative;
   overflow: hidden;
-  cursor: none; /* Hide the cursor for a better experience */
+  cursor: none; 
 
-  /* The digital rain effect using multiple gradients */
+  
   background-image: 
     linear-gradient(rgba(0,255,0,0.15) 1px, transparent 1px),
     linear-gradient(90deg, rgba(0,255,0,0.15) 1px, transparent 1px);
@@ -305,15 +295,14 @@ body {
   animation: digital-rain 20s linear infinite;
 }
 
-/* The player you control */
+
 .player-pixel {
   position: absolute;
-  /* Make it larger and more visible */
+  
   width: 30px;
   height: 30px;
-  background-color: #00ff00; /* Bright neon green */
+  background-color: #00ff00; 
   border-radius: 5px;
-  /* The glow effect! */
   box-shadow: 0 0 10px #0f0, 0 0 20px #0f0, 0 0 30px #0f0;
   z-index: 5;
 }
@@ -324,45 +313,42 @@ body {
   width: 25px;
   height: 25px;
   border-radius: 3px;
-  /* Give enemies their own glow */
+  
   box-shadow: 0 0 10px, 0 0 15px;
 }
 
-/* src/index.css */
 
-/* --- Keyframes for the pulsating effect --- */
 @keyframes pulse {
   0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.7); }
   70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(255, 255, 255, 0); }
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); }
 }
 
-/* --- Color Catch Styles --- */
+
 .color-catch-game {
   width: 100%;
   height: 100%;
-  background-color: #121212; /* Very dark grey background */
+  background-color: #121212; 
   position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 20px; /* Space between elements */
+  gap: 20px; 
 }
 
-/* The main circle that changes color */
+
 .color-orb {
   width: 200px;
   height: 200px;
   border-radius: 50%;
   border: 4px solid white;
-  /* Smooth transition for color changes */
+  
   transition: background-color 0.1s ease-in-out;
-  animation: pulse 2s infinite; /* Apply the pulse animation */
+  animation: pulse 2s infinite; 
 }
 
-/* The box that shows the target color */
 .target-display {
   position: absolute;
   top: 20px;
@@ -380,28 +366,26 @@ body {
   transition: background-color 0.2s;
 }
 
-/* The text for instructions and feedback */
+
 .game-message {
   color: white;
   font-size: 28px;
   text-align: center;
-  height: 40px; /* Reserve space to prevent layout shifts */
+  height: 40px; 
 }
 
-/* src/index.css */
 
-/* --- Style for the Combo Multiplier --- */
 .combo-display {
   position: absolute;
   bottom: 20px;
   right: 20px;
   font-size: 24px;
-  color: #f1c40f; /* A gold color for emphasis */
+  color: #f1c40f; 
   text-shadow: 0 0 5px #f1c40f, 0 0 10px #f1c40f;
   transition: transform 0.2s ease;
 }
 
-/* A little "pop" animation when the combo increases */
+
 .combo-display.pop {
   transform: scale(1.2);
 }
@@ -413,19 +397,17 @@ body {
   }
 }
 
-/* --- 1. Watermark Styling --- */
+
 .arcade-watermark {
   margin: 5px 0 0 0;
   font-size: 14px;
   color: #ffcc00;
   text-shadow: 1px 1px #d10000;
   opacity: 0.9;
-  letter-spacing: 2px; /* Give it some nice spacing */
+  letter-spacing: 2px; 
 }
 
 
-/* --- 2. Scan Lines Overlay for the Screen --- */
-/* We use an ::after pseudo-element so it doesn't interfere with game content */
 .arcade-screen::after {
   content: '';
   position: absolute;
@@ -435,13 +417,13 @@ body {
   height: 100%;
   
 
-  opacity: 0.5; /* Make them subtle */
-  pointer-events: none; /* VERY IMPORTANT: Allows clicks to pass through to the game */
-  z-index: 100; /* Ensures it's on top of everything inside the screen */
+  opacity: 0.5; 
+  pointer-events: none;
+  z-index: 100; 
 }
 
 
-/* --- 3. Blinking Button Style --- */
+
 .blinking-button {
   animation: blink-effect 1.5s linear infinite;
 }
