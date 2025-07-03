@@ -5,7 +5,7 @@
 
 A retro arcade cabinet built with React, featuring three classic micro-games. This project is my submission for the **#30DaysOfVibeCoding** challenge, where I build and ship a project every single day.
 
-### [**Live Demo on Vercel**](https://demo.vercel.app)
+### [**Live Demo on Vercel**](https://tiny-arcade.vercel.app/)
 
 <!-- 💡 Don't forget to replace this screenshot with a cool GIF or image of your finished project! -->
 ![Minigame Studio Screenshot](Screenshot%202025-07-03%20195308.png)
