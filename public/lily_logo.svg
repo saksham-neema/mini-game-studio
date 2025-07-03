@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- Stem -->
+  <line x1="50" y1="85" x2="50" y2="45" stroke="#4a7c59" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Leaves -->
+  <ellipse cx="35" cy="70" rx="8" ry="3" fill="#4a7c59" transform="rotate(-30 35 70)"/>
+  <ellipse cx="65" cy="75" rx="8" ry="3" fill="#4a7c59" transform="rotate(30 65 75)"/>
+  
+  <!-- Lily petals -->
+  <g transform="translate(50,35)">
+    <!-- Back petals -->
+    <ellipse cx="0" cy="-15" rx="4" ry="18" fill="#ffd6cc" transform="rotate(0)"/>
+    <ellipse cx="-13" cy="-7.5" rx="4" ry="18" fill="#ffd6cc" transform="rotate(-60)"/>
+    <ellipse cx="13" cy="-7.5" rx="4" ry="18" fill="#ffd6cc" transform="rotate(60)"/>
+    
+    <!-- Front petals -->
+    <ellipse cx="-13" cy="7.5" rx="4" ry="18" fill="#ffb3ba" transform="rotate(-120)"/>
+    <ellipse cx="13" cy="7.5" rx="4" ry="18" fill="#ffb3ba" transform="rotate(120)"/>
+    <ellipse cx="0" cy="15" rx="4" ry="18" fill="#ffb3ba" transform="rotate(180)"/>
+  </g>
+  
+  <!-- Stamens -->
+  <g transform="translate(50,35)">
+    <line x1="-3" y1="0" x2="-5" y2="-8" stroke="#8b4513" stroke-width="1"/>
+    <line x1="3" y1="0" x2="5" y2="-8" stroke="#8b4513" stroke-width="1"/>
+    <line x1="0" y1="0" x2="0" y2="-10" stroke="#8b4513" stroke-width="1"/>
+    <line x1="-6" y1="3" x2="-8" y2="-5" stroke="#8b4513" stroke-width="1"/>
+    <line x1="6" y1="3" x2="8" y2="-5" stroke="#8b4513" stroke-width="1"/>
+    
+    <!-- Anthers -->
+    <circle cx="-5" cy="-8" r="1.5" fill="#ff6b35"/>
+    <circle cx="5" cy="-8" r="1.5" fill="#ff6b35"/>
+    <circle cx="0" cy="-10" r="1.5" fill="#ff6b35"/>
+    <circle cx="-8" cy="-5" r="1.5" fill="#ff6b35"/>
+    <circle cx="8" cy="-5" r="1.5" fill="#ff6b35"/>
+  </g>
+  
+  <!-- Center of flower -->
+  <circle cx="50" cy="35" r="3" fill="#ffeb3b" opacity="0.8"/>
+</svg>
