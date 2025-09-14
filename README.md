@@ -6,14 +6,14 @@ A retro arcade cabinet built with React, featuring three classic micro-games.
 
 ### [**Live Demo on Vercel**](https://mini-game-studio.vercel.app/)
 
-![Minigame Studio Screenshot](Screenshot%202025-07-03%20195308.png)
-![Minigame Studio Screenshot](Screenshot%202025-07-03%20195543.png)
-![Minigame Studio Screenshot](Screenshot%202025-07-03%20195652.png)
+![Minigame Studio Screenshot](/Screenshot%202025-09-14%20113758.png)
+![Minigame Studio Screenshot](/Screenshot%202025-09-14%20113819.png)
+![Minigame Studio Screenshot](/Screenshot%202025-09-14%20113909.png)
 
-![Minigame Studio Screenshot](Screenshot%202025-07-03%20200351.png)
+![Minigame Studio Screenshot](/Screenshot%202025-09-14%20113937.png)
 
-![Minigame Studio Screenshot](Screenshot%202025-07-03%20200421.png)
-![Minigame Studio Screenshot](Screenshot%202025-07-03%20200445.png)
+![Minigame Studio Screenshot](/Screenshot%202025-09-14%20114024.png)
+![Minigame Studio Screenshot](/Screenshot%202025-09-14%20114127.png)
 
 ## 🚀 About The Project
 
