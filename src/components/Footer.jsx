@@ -18,7 +18,7 @@ function Footer({ githubUrl, linkedinUrl }) {
         </a>
       </div>
       <div className="creator-credit">
-        Made by Shubhi Sharma
+        Made by Saksham Neema
       </div>
     </footer>
   );

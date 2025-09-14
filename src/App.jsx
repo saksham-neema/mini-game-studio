@@ -96,7 +96,7 @@ function App() {
         <> {/* A Fragment to hold both the cabinet and footer */}
           <ArcadeCabinet
             gameState={gameState}
-            watermark="- by Shubhi Sharma -"
+            watermark="- by Saksham Neema -"
             controls={renderControls()}
           >
             {renderGameScreen()}
@@ -109,8 +109,8 @@ function App() {
           */}
           {!(gameState === 'playing' && activeGame === 'dodge-the-pixel') && (
             <Footer
-              githubUrl="https://github.com/shvbhii/Tiny-Arcade.git" 
-              linkedinUrl="https://www.linkedin.com/in/shvbhi" 
+              githubUrl="https://github.com/saksham-neema/mini-game-studio.git" 
+              linkedinUrl="https://www.linkedin.com/in/saksham-neema" 
             />
           )}
         </>
